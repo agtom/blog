@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS posts;
+CREATE TABLE posts (
+  id INTEGER PRIMARY KEY,
+  title TEXT, 
+  body TEXTAREA,
+  tags TEXT,
+  IMAGE TEXT
+);
+

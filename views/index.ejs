@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<body>
+	<h1> WELCOME TO THE YOUR BLOG!!! </h1>
+
+	<a href="/new"> Click here to create a new blog </a>
+
+<!-- Show index of all blog posts -->
+
+	<ul>
+		<% posts.forEach(function(object) { %>
+			<li>
+				<h3><%= object.title %></h3>
+			<br>
+				<p>Tags: <%= object.tags %></p>
+			<br>
+				<p>Image: <%= object.IMAGE %> %></p>
+			</li> 
+		<% }) %>
+	</ul>
+
+
+</body>
+</html>
