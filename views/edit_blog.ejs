@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+<title><%= blogger.title %></title>
+	<style type="text/css">
+      		
+      	body{background-color: lightblue; color: darkblue; font-weight: bold; margin: 5%;text-align: center;}
+      	
+      	h1{color: darkblue}
+      	h2{color: darkblue}
+
+      	input{font-size: 14px; width: 330px;margin: auto; border-radius: 5px; border: 2px blue solid; padding: 5px}
+
+      	textarea{font-size: 14px; width: 330px;margin: auto; border-radius: 5px; border: 2px blue solid; padding: 5px}
+      		
+      	button{color: darkblue; padding: 10px; border-radius: 10px;border-color: #CCFFFF; font-size: 18px; background-color: #F0F0F0; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+
+     	button a{ text-decoration: none; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+
+     	button:hover{background-color: darkblue; color: white; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+
+     	button:hover a{text-decoration: none; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+
+      .jumbotron{border: 2px black solid; margin: 5% 10%;}
+
+      	.body{background-color: white; padding: 10px}
+    	
+    	</style>
+</head>
+<body>
+<div class="jumbotron">
+
+	<h1>You can edit <%= library[0].l_title %> below</h1>
+
+		<form action="/blogger/<%= blogger.id %>/blog/<%= library[0].blogid %>?_method=PUT" method="POST">
+			<label>Blog title</label><br><br>
+			<input type="text" name="title" value="<%= library[0].l_title %>"required>
+			<br><br>
+		
+			<label>Blog content</label><br><br>
+			<textarea name="content" rows =5 cols=52 value="<%= library[0].l_body %>"required></textarea>
+			<br><br>
+
+			<label>Blog tags</label><br><br>
+			<input type="text" name="tags" value="<%= library[0].l_tags %>"required>
+			<br><br>
+
+			<label>Image (must be an image URL)</label><br><br>
+			<input type="text" name="image" value="<%= library[0].l_image %>"required>
+			<br><br>
+			<button>Submit</button>
+		</form>
+	<br><br>
+	
+	<a href="/blogger/<%= blogger.id %>">
+	<button>Back to blogger page</button>
+	</a>
+</div>
+</body>
+</html>

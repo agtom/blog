@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>
+    <style type="text/css">
+      body{background-color: lightblue; margin: 5%;text-align: center;}
+      h1{color: darkblue; font-weight: bold; font-size: 40px}
+      h2{color: darkblue; font-weight: bold}
+      
+ 	/*BUTTON STYLING*/
+
+    button{color: darkblue; padding: 10px; border-radius: 10px; border-color: #CCFFFF; font-size: 18px; background-color: #F0F0F0; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+
+    button a{ text-decoration: none; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+
+    button:hover{background-color: darkblue; color: white; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+
+    button:hover a{text-decoration: none; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+
+
+	/*MAIN PAGE STYLING*/
+    .jumbotron{ margin: 5% 5%; max-width: 800px}
+
+    /*PAGE SUBSECTION STYLING*/
+
+    .master{display: inline-block; border: 2px solid #CCFFFF; border-radius: 20px; padding: 20px;}
+
+    .submaster{display: inline-block; border: 2px solid blue; border-radius: 20px; padding: 20px;}
+
+	/*IMAGE STLYING*/
+	
+	img{border-radius: 20px}
+
+	.image figure {position: relative; display: table}
+
+	.image figcaption {border-radius: 20px; background: rgba(0,0,0,0.8); color: white; font-size: 30px; display: table-cell; height: 100%; width: 100%; opacity: 0; position: absolute; bottom: 0; -webkit-transition: all 300ms; -moz-transition: all 300ms;transition: all 300ms}
+
+	.image:hover figcaption {opacity: 1;}
+
+	/*INFO STYLING*/
+
+    .info{ /*color: black; *//*float: left;*/ /*margin-left: 20px*/; border-radius: 20px; /*padding: 10px*/; background-color:#F0F0F0; height:200px; /*width: 400px; *//*overflow: hidden*/}
+
+	.info figure {position: relative; display: table; margin: 0; height: 200px; width: 100%;}
+
+	.info figcaption {border-radius: 20px; background: rgba(0,0,0,0.8); color: white; font-size: 30px; display: table-cell; height: 100%; width: 100%; opacity: 0; position: absolute; bottom: 0; -webkit-transition: all 300ms; -moz-transition: all 300ms;transition: all 300ms}
+
+	.info:hover figcaption { opacity: 1;}
+
+    </style>
+</head>
+<body>
+<div class="jumbotron">
+
+	<h1>About <%= blogger.name %></h1>
+
+	<div class="master">
+
+		<div class="button">
+
+			<a href="/blogger/<%= blogger.id %>/blogs/new">
+				<button class="newBlog">Create a new blog post</button>
+			</a>
+
+		</div>
+
+		<br><br>
+	
+		<div class="submaster">
+			<div class="image">
+				<figure>
+					<img src=" <%= blogger.avatar %>" height="160" width="160"/>
+					<a href="/blogger/<%= blogger.id %>/blogs">
+						<figcaption><br><br>BLOGS</figcaption>
+					</a>
+				</figure>
+			</div>
+
+			<div class="info">
+				<a href="/blogger/<%= blogger.id %>/edit">
+					<figure>
+						<h3><%= blogger.name %></h3>
+						<p> <%= blogger.info %></p>
+						<figcaption><br><br>EDIT<br>PROFILE</figcaption>
+					</figure>
+				</a>
+			</div>
+		</div>
+			<br><br><br>
+
+		<div class="button">
+
+			<a href="/bloggers">
+				<button class="backToList">Back to list of bloggers</button>
+			</a>
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+    <style type="text/css">
+      body{background-color: lightblue; font-weight: bold; margin: 5%; text-align: center;}
+      h1{color: darkblue; font-weight: bold; font-size: 40px}
+      h2{color: darkblue; font-weight: bold}
+
+     /*FORM STYLING*/
+
+    input{font-size: 14px; width: 330px;margin: auto; border-radius: 5px; border: 2px blue solid; padding: 5px}
+
+    textarea{font-size: 14px; width: 330px;margin: auto; border-radius: 5px; border: 2px blue solid; padding: 5px}
+
+    /*BUTTON STYLING*/
+
+    button{color: darkblue; padding: 10px; border-radius: 5px; border-color: #CCFFFF; font-size: 18px; background-color: #F0F0F0; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+
+    button a{ text-decoration: none; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+
+    button:hover{background-color: darkblue; color: white; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+
+    button:hover a{text-decoration: none; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+
+    /*MAIN PAGE STYLING*/
+
+    .jumbotron{margin: 5% 10%;padding: 10px;}
+
+    /*PAGE SUBSECTION STYLING*/
+
+    .master{display: inline-block; border: 2px solid blue; border-radius: 20px; padding: 20px;}
+
+    .submaster{display: inline-block; border: 2px solid #CCFFFF; border-radius: 20px; padding: 20px;}
+
+    </style>
+</head>
+<body>
+<div class="jumbtron">
+	<h1> Set up a new blogger profile </h1>
+	<div class="master">
+
+		<div class="button">
+
+			<a href="/bloggers %>">
+				<button class="backToBloggers">Back to bloggers</button>
+			</a>	
+
+		</div>
+
+		<br><br>
+
+		<form action="/bloggers" method="POST">
+			<label>Your blogger name</label><br><br>
+			<input type="text" name="name" placeholder="name"required><br><br>
+			<label>Avatar (must be an image URL)</label><br><br>
+			<input type="text" name="avatar" placeholder="url of an image"required><br><br>
+			<label>Blogger info</label><br><br>
+			<textarea name="info" rows =5 cols=52 placeholder="Just a little bit about yourself"required></textarea><br><br>
+			<button>Submit</button>
+		</form>
+	</div>
+</div>
+</body>
+</html>

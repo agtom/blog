@@ -1,24 +1,76 @@
 <!DOCTYPE html>
+<head>
+    <style type="text/css">
+      body{background-color: lightblue; margin: 5%;text-align: center;}
+      h1{color: darkblue; font-weight: bold; font-size: 40px}
+      h2{color: darkblue; font-weight: bold}
 
+	/*FORM STYLING*/
+
+    input{font-size: 14px; width: 330px;margin: auto; border-radius: 5px; border: 2px blue solid; padding: 5px}
+
+    textarea{font-size: 14px; width: 330px;margin: auto; border-radius: 5px; border: 2px blue solid; padding: 5px}
+
+    /*BUTTON STYLING*/
+    button{color: darkblue; padding: 10px; border-radius: 10px;border-color: #CCFFFF; font-size: 18px; background-color: #F0F0F0; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+
+    button a{ text-decoration: none; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+
+    button:hover{background-color: darkblue; color: white; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+
+    button:hover a{text-decoration: none; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+      
+    /*MAIN PAGE STYLING*/
+
+    .jumbotron{margin: 5% 10%;padding: 10px;}
+
+    /*PAGE SUBSECTION STYLING*/
+
+	.ubermaster{display: inline-block; border: 2px solid blue; border-radius: 20px; padding: 20px;}
+
+    .master{display: inline-block; border-radius: 20px; padding: 20px;}
+
+    .button{display: inline-block;}
+
+    /*IMAGE STYLING*/
+    
+    img{border-radius: 50px; float: left; overflow: hidden; margin-bottom: 10px}
+
+    img:hover{opacity: 0.5; border: 3px yellow solid; border-color: 0033FF; margin-top:-3px; margin-left: -3px; margin-right: -3px; margin-bottom: 7px}
+
+
+
+    </style>
+</head>
 <body>
-	<h1> WELCOME TO THE YOUR BLOG!!! </h1>
+<div class="jumbotron">
+<h1> The B - Team </h1>
 
-	<a href="/new"> Click here to create a new blog </a>
+	<div class="ubermaster">
 
-<!-- Show index of all blog posts -->
+		<div class="button">
+			<a href="/blogger/new">
+				<button class="newBlogger">Click here to create a new blogger
+				</button></a>
+		</div>
 
-	<ul>
-		<% posts.forEach(function(object) { %>
-			<li>
-				<h3><%= object.title %></h3>
-			<br>
-				<p>Tags: <%= object.tags %></p>
-			<br>
-				<p>Image: <%= object.IMAGE %> %></p>
-			</li> 
-		<% }) %>
-	</ul>
+		<br>
+		
+		<div class="master">
+			<% Object.keys(blogger).forEach(function(key) { %>
+			
+			<h2><%= blogger[key].name %></h2>
+			
+			<a href="/blogger/<%= blogger[key].id %>"><img src=" <%= blogger[key].avatar %>"width="160" height="160"/></a>
+			<% }); %>
+		</div>
+		
+		<br><br><br>
 
-
+		<div class="Backtotop">
+	  		<a href="#Top"><button>Back to Top</button></a>
+		</div>
+	</div>
+</div>
 </body>
 </html>

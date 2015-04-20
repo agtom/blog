@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<head>
+    <style type="text/css">
+    	body{background-color: lightblue; margin: 5%; text-align: center;}
+     	h1{color: darkblue; font-weight: bold; font-size: 40px}
+     	h2{color: darkblue; font-weight: bold}
+
+	/*BUTTON STYLING*/
+     
+    button{color: darkblue; padding: 10px; border-radius: 10px; border-color: #CCFFFF; font-size: 18px; background-color: #F0F0F0; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+    
+    button a{ text-decoration: none; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+
+    button:hover{background-color: darkblue; color: white; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+
+    button:hover a{text-decoration: none; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+
+	/*MAIN PAGE STYLING*/
+
+      .jumbotron{margin: 5% 10%;padding: 10px;}
+
+    /*PAGE SUBSECTION STYLING*/
+
+    .ubermaster{display: inline-block; border: 2px solid #CCFFFF; border-radius: 20px; padding: 20px;}
+
+    .master{display: inline-block; border: 2px solid blue; border-radius: 20px; padding: 20px;}
+
+    .subMaster{display: inline-block}
+
+    .button{display: inline-block; width: 500px}
+
+    /*IMAGE STYLING*/
+	
+	img{border-radius: 20px}
+
+	.image figure {position: relative; display: table; margin: 0;}
+
+	.image figcaption {border-radius: 20px; background: rgba(0,0,0,0.8); color: white; font-size: 25px; display: table-cell; height: 100%; width: 100%; opacity: 0; position: absolute; bottom: 0; -webkit-transition: all 300ms; -moz-transition: all 300ms;transition: all 300ms}
+
+	.image:hover figcaption {opacity: 1;}
+
+/*     	img{border-radius: 50px; float: left; overflow: hidden; }
+
+     	img:hover{border: 3px yellow solid; margin:-3px; opacity: 0.5}*/
+
+     	.image{float: left;}
+
+    /*INFO STYLING*/
+
+    .info{float: left; color: black; border-radius: 50px; padding: 10px; margin-left: 10px; background-color: #F0F0F0; width:350px; height:140px; overflow: hidden;}
+
+    /*.info:hover{border: 2px blue solid; border-color: 0033FF}*/
+
+    </style>
+</head>
+<body>
+<div class="jumbotron">
+
+	<h1>Blogs by <%= blogger.name %></h1>
+	
+	<div class="ubermaster">	
+
+		<div class="button">
+
+			<a href="/blogger/<%= blogger.id %>/blogs/new">
+				<button class="newBlog">Post a new blog</button>
+			</a>
+
+		</div>
+
+		<br><br>
+
+		<div class="master">
+			<% Object.keys(library).forEach(function(key) { %>
+				<div class="subMaster">
+					<div class="image">
+						<figure>
+							<img src=" <%= library[key].l_image %> "width="160" height="160"/>
+							<a href="/blogger/<%= blogger.id %>/blog/<%=library[key].blogid %>/edit">
+								<figcaption><br><br><br>EDIT BLOG</figcaption>
+							</a>
+						</figure>
+					</div>
+
+						<div class="info">
+							<h3> <%= library[key].l_title %></h3>
+							<p> <%= library[key].l_body %></p>
+						</div>
+					</a>
+				</div>
+				<br>
+				<% }); %>
+		</div>
+		
+		<br><br>
+
+			<div class="button">
+
+			<a href="/blogger/<%= blogger.id %>">
+				<button class="backToBlogger">Back to blogger profile</button>
+			</a>	
+
+			</div>
+
+		<br><br>
+
+		<div class="Backtotop">
+	  		<a href="#Top"><button>Back to Top</button></a>
+		</div>
+	</div>
+<div>
+</body>
+</html>

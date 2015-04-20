@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+<title><%= blogger.title %></title>
+	<style type="text/css">
+      		
+      	body{background-color: lightblue; color: darkblue; font-weight: bold; margin: 5%;text-align: center;}
+      	
+      	h1{color: darkblue}
+      	h2{color: darkblue}
+
+      	input{font-size: 14px; width: 330px;margin: auto; border-radius: 5px; border: 2px blue solid; padding: 5px}
+
+      	textarea{font-size: 14px; width: 330px;margin: auto; border-radius: 5px; border: 2px blue solid; padding: 5px}
+      		
+      	button{color: darkblue; padding: 10px; border-radius: 10px;border-color: DeepSkyBlue; font-size: 18px; background-color: #F0F0F0; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+
+     	button a{ text-decoration: none; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+
+     	button:hover{background-color: darkblue; color: white; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+
+     	button:hover a{text-decoration: none; -webkit-transition: 0.4s; -moz-transition: 0.4s; transition: 0.4s}
+
+      		.body{background-color: white; padding: 10px}
+    	
+    	</style>
+</head>
+<body>
+<div class="jumbotron">
+	<h1>You can edit <%= blogger.name %>'s profile below</h1>
+
+		<form action="/blogger/<%= blogger.id %>?_method=PUT" method="POST">
+			<label>Blogger name</label><br><br>
+			<input type="text" name="name" value="<%= blogger.name %>"required><br><br>
+			<label>Avatar</label><br><br>
+			<input type="text" name="avatar" value="<%= blogger.avatar %>"required><br><br>
+			<label>Blogger info</label><br><br>
+			<textarea name="info" rows =5 cols=52 required><%= blogger.info %></textarea><br><br>
+			<button>Submit</button>
+		</form>
+	<br><br>
+	
+	<a href="/blogger/<%= blogger.id %>">
+	<button>Back to blogger page</button>
+	</a>
+</div>
+</body>
+</html>
